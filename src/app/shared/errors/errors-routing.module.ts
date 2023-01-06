@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  { path: '404', component: PageNotFoundComponent }
+  {
+    path: '404',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
