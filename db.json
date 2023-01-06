@@ -1,0 +1,17 @@
+{
+  "pizzas": [
+    {
+      "title": "Margherita",
+      "description": "Tomatensaus, mozzarella en met knoflookolie op de rand van de pizza. Tip! Ook lekker met oregano.",
+      "ingredients": [
+        "Tomatensaus",
+        "Mozarella"
+      ],
+      "price": 9.99,
+      "thumbnail": {
+        "url": "https://images.newyorkpizza.nl/Products/Original/Margherita-7711.jpg",
+        "description": "Margherita pizza"
+      }
+    }
+  ]
+}
