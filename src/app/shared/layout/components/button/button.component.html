@@ -1,0 +1,6 @@
+<button class="uppercase font-fredoka bg-darker-blue text-white px-4 py-2 rounded border border-white border-opacity-30">
+  <ng-template [ngIf]="icon">
+    <fa-icon [icon]="icon" class="pr-4" size="sm"></fa-icon>
+  </ng-template>
+  <ng-content></ng-content>
+</button>
