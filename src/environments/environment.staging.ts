@@ -1,7 +1,7 @@
-import { EnvironmentProperties } from "./environment-properties";
-import { Environment } from "../app/core/enums/Environment";
+import { EnvironmentProperties } from './environment-properties';
+import { Environment } from '../app/core/enums/Environment';
 
 export const environment: EnvironmentProperties = {
-  environment: Environment.STAGING,
-  backendBaseUrl: ""
-}
+    environment: Environment.STAGING,
+    backendBaseUrl: '',
+};
