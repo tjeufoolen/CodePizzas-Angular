@@ -1,0 +1,30 @@
+<div class="inline-block" (mouseenter)="open()" (mouseleave)="close()">
+    <div
+        class="uppercase font-fredoka bg-darker-blue text-white px-4 py-2 border border-white border-opacity-30 cursor-pointer"
+        [ngClass]="isOpen ? 'rounded-t' : 'rounded'">
+        <ng-template [ngIf]="icon">
+            <fa-icon [icon]="icon" class="pr-4" size="sm"></fa-icon>
+        </ng-template>
+        <span>{{ selectedOption?.name }}</span>
+        <fa-icon [icon]="dropdownIcon" class="pl-4" size="sm"></fa-icon>
+    </div>
+
+    <div class="relative">
+        <div *ngIf="isOpen" class="absolute left-0 right-0">
+            <div
+                *ngFor="let option of selectableOptions"
+                class="uppercase font-fredoka bg-darker-blue text-white px-4 py-2 border border-white border-opacity-30 last:rounded-b hover:bg-dark-blue cursor-pointer"
+                (click)="selectOption(option)">
+                <input
+                    type="radio"
+                    [value]="option.value"
+                    [id]="option.value"
+                    [name]="group"
+                    class="opacity-0 absolute" />
+                <label [for]="option.value" class="cursor-pointer">{{
+                    option.name
+                }}</label>
+            </div>
+        </div>
+    </div>
+</div>

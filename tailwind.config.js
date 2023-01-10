@@ -18,7 +18,11 @@ module.exports = {
             knewave: ['Knewave', 'cursive'],
             'open-sans': ['Open Sans', 'sans-serif'],
         },
-        extend: {},
+        extend: {
+            flex: {
+                '2': '2 2 0%'
+            }
+        },
     },
     plugins: [],
 };
