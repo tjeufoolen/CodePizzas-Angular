@@ -1,0 +1,9 @@
+<app-button
+    [icon]="theme.icon"
+    (click)="toggleTheme()"
+    *ngIf="{
+        active: theme$ | async,
+        icon: icon$ | async
+    } as theme">
+    {{ theme.active }}
+</app-button>

@@ -1,4 +1,4 @@
-import { Environment } from '../app/core/enums/Environment';
+import { Environment } from '../app/shared/enums/Environment';
 
 export interface EnvironmentProperties {
     /**

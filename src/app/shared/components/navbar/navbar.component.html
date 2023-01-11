@@ -1,0 +1,57 @@
+<!-- TODO: Add mobile navigation support -->
+<nav class="bg-darker-blue flex items-center p-4">
+    <div class="flex-1">
+        <div class="hidden xl:inline-block">
+            <app-select
+                group="language"
+                [icon]="languageIcon"
+                [options]="[
+                    { name: 'Nederlands', value: 'nl' },
+                    { name: 'English', value: 'en' },
+                    { name: 'Deutsch', value: 'de' },
+                    { name: 'Français', value: 'fr' }
+                ]"
+                (selectionChanged)="changeLanguage($event.toString())"
+                class="mr-4"></app-select>
+            <app-theme-switch></app-theme-switch>
+        </div>
+        <app-button
+            [icon]="mobileMenuIcon"
+            class="inline-block xl:hidden"></app-button>
+    </div>
+    <div class="flex-2">
+        <a routerLink="/">
+            <img
+                src="../../../../assets/images/codepizzas-logo.svg"
+                alt="CodePizzas logo"
+                class="m-auto" />
+        </a>
+    </div>
+    <div class="flex-1 text-end">
+        <a routerLink="/checkout/cart" class="inline-block xl:hidden">
+            <app-button [icon]="shoppingCartIcon" class="mr-4"></app-button>
+        </a>
+        <div class="hidden xl:inline-block">
+            <ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut">
+                <app-select
+                    group="account"
+                    [icon]="accountIcon"
+                    [options]="[
+                        { name: 'Tjeu', value: '#' },
+                        { name: 'Orders', value: '/account/orders' },
+                        { name: 'Addresses', value: '/account/addresses' },
+                        { name: 'Settings', value: '/account/settings' },
+                        { name: 'Sign out', value: '/sign-out' }
+                    ]"
+                    [mutable]="false"
+                    (selectionChanged)="navigate($event.toString())"
+                    class="mr-4"></app-select>
+            </ng-template>
+            <ng-template #loggedOut>
+                <a routerLink="/login">
+                    <app-button [icon]="accountIcon">Login</app-button>
+                </a>
+            </ng-template>
+        </div>
+    </div>
+</nav>

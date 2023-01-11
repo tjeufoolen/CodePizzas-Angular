@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import {
+    faBars,
     faEarth,
-    faLightbulb,
-    faMoon,
     faShoppingCart,
     faUserAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { Theme } from '../../../../core/enums/Theme';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
 
@@ -19,6 +17,7 @@ export class NavbarComponent {
     languageIcon: IconDefinition = faEarth;
     shoppingCartIcon: IconDefinition = faShoppingCart;
     accountIcon: IconDefinition = faUserAlt;
+    mobileMenuIcon: IconDefinition = faBars;
 
     constructor(private router: Router) {
         this.router = router;
@@ -31,22 +30,6 @@ export class NavbarComponent {
     navigate(url: string): void {
         this.router.navigateByUrl(url);
     }
-
-    // TODO: Move theme variables and mutations to state
-    theme: Theme = Theme.LIGHT;
-
-    toggleTheme(): void {
-        this.theme = this.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
-    }
-
-    get themeIcon(): IconDefinition {
-        if (this.theme === Theme.LIGHT) {
-            return faLightbulb;
-        } else {
-            return faMoon;
-        }
-    }
-    // END: Move theme variables and mutations to state
 
     changeLanguage(value: string) {
         console.log('language change!!!');

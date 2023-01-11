@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
     selector: 'app-button',
@@ -7,5 +7,5 @@ import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
     styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
-    @Input() icon?: IconDefinition;
+    @Input() icon: IconProp | null = null;
 }

@@ -1,16 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-import { ErrorsModule } from './errors/errors.module';
-import { NavbarComponent } from './layout/components/navbar/navbar.component';
-import { ButtonComponent } from './layout/components/button/button.component';
-import { SelectComponent } from './layout/components/select/select.component';
 import { RouterLink } from '@angular/router';
 
+import { ErrorsModule } from './errors/errors.module';
+import { ButtonComponent } from './components/button/button.component';
+import { SelectComponent } from './components/select/select.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { StoreModule } from '@ngrx/store';
+import * as ThemeStore from './store/reducers/theme.reducer';
+import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
+
 @NgModule({
-    declarations: [NavbarComponent, ButtonComponent, SelectComponent],
-    imports: [CommonModule, FontAwesomeModule, ErrorsModule, RouterLink],
-    exports: [NavbarComponent, ButtonComponent, SelectComponent],
+    declarations: [
+        ButtonComponent,
+        SelectComponent,
+        NavbarComponent,
+        ThemeSwitchComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterLink,
+        FontAwesomeModule,
+        ErrorsModule,
+        StoreModule.forFeature(ThemeStore.featureKey, ThemeStore.themeReducer),
+    ],
+    exports: [
+        ButtonComponent,
+        SelectComponent,
+        NavbarComponent,
+        ThemeSwitchComponent,
+    ],
 })
 export class SharedModule {}
